@@ -1,4 +1,4 @@
-package com.felipefreitas.rhexpress.infra.database;
+package com.felipefreitas.rhexpress.infra.database.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
