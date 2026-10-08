@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface UsuarioPersistence extends JpaRepository<UsuarioEntity, Integer> {
+public interface UsuarioPersistence extends JpaRepository<UsuarioEntity, Long> {
     boolean existsByEmail(String email);
 
     UsuarioEntity save(UsuarioEntity usuario);

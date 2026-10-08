@@ -2,7 +2,7 @@ package com.felipefreitas.acheimontador.infra.controller;
 
 import com.felipefreitas.acheimontador.app.dto.autenticacao.AuthTokenResponseDTO;
 import com.felipefreitas.acheimontador.app.dto.autenticacao.LoginRequestDTO;
-import com.felipefreitas.acheimontador.app.usecase.AutenticacaoUseCase;
+import com.felipefreitas.acheimontador.app.port.input.AutenticarUsuarioInputPort;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Autenticação", description = "Endpoints de autenticação e emissão de token JWT")
 public class AutenticacaoController {
 
-    private final AutenticacaoUseCase autenticacaoUseCase;
+    private final AutenticarUsuarioInputPort autenticacaoUseCase;
 
 
     @PostMapping("/login")

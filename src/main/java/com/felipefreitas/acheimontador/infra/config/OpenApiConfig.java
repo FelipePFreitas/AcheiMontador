@@ -20,9 +20,9 @@ import org.springframework.context.annotation.Configuration;
 )
 @OpenAPIDefinition(
         info = @Info(
-                title = "RhExpress API",
+                title = "AcheiMontador API",
                 version = "1.0.0",
-                description = "API RESTful para gestão de recursos humanos desenvolvida com Java 21, Spring Boot, Spring Security e MySQL.",
+                description = "API para conectar clientes a montadores de móveis próximos.",
                 termsOfService = "https://github.com/FelipePFreitas/RhExpress",
                 contact = @Contact(
                         name = "Felipe Freitas",

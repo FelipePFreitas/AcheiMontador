@@ -11,8 +11,8 @@
     <groupId>com.felipefreitas</groupId>
     <artifactId>acheimontador</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name/>
-    <description/>
+    <name>AcheiMontador</name>
+    <description>API da plataforma AcheiMontador para conectar clientes a montadores de móveis próximos.</description>
     <url/>
     <licenses>
         <license/>

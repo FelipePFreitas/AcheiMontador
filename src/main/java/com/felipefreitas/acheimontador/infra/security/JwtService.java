@@ -15,7 +15,7 @@ import java.util.Date;
 @Service
 public class JwtService {
 
-    private static final String ISSUER = "rhexpress-api";
+    private static final String ISSUER = "acheimontador-api";
 
     private final Algorithm algorithm;
     private final JWTVerifier verifier;
@@ -31,13 +31,13 @@ public class JwtService {
         this.expirationMillis = expirationMillis;
     }
 
-    public String generateToken(UserDetails userDetails) {
+    public String generateToken(String username) {
         Instant now = Instant.now();
         Instant expiration = now.plusMillis(expirationMillis);
 
         return JWT.create()
                 .withIssuer(ISSUER)
-                .withSubject(userDetails.getUsername())
+                .withSubject(username)
                 .withIssuedAt(Date.from(now))
                 .withExpiresAt(Date.from(expiration))
                 .sign(algorithm);
