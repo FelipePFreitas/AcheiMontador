@@ -21,4 +21,5 @@ public class UsuarioEntity {
     @Column(nullable = false)
     private String senha;
 
+
 }

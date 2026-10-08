@@ -9,9 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Data
-public class Usuario {
+public class Cliente {
     private Long id;
+    private String nome;
     private String email;
     private String senha;
-    private Cliente cliente;
+    private String documento;
+    private Endereco endereco;
 }

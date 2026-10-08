@@ -9,9 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Data
-public class Usuario {
-    private Long id;
-    private String email;
-    private String senha;
-    private Cliente cliente;
+public class Endereco {
+
+    private String cep;
+    private String endereco;
+    private String numero;
+    private String complemento;
+    private String bairro;
+    private String cidade;
+    private String estado;
+
 }
