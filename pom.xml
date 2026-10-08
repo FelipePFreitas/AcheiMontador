@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.felipefreitas</groupId>
-    <artifactId>rhexpress</artifactId>
+    <artifactId>acheimontador</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name/>
     <description/>
