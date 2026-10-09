@@ -12,15 +12,26 @@ O objetivo do AcheiMontador é facilitar a busca e o contato entre as partes. A 
 
 ## Configuração local
 
-A aplicação usa MySQL e lê as configurações sensíveis por variáveis de ambiente:
+A aplicação usa PostgreSQL e lê as configurações por variáveis de ambiente:
 
-- `DB_URL` (opcional; padrão: `jdbc:mysql://localhost:3306/acheimontador`)
-- `DB_USERNAME` (opcional; padrão: `root`)
-- `DB_PASSWORD` (opcional)
+- `DB_URL` (opcional; padrão: `jdbc:postgresql://localhost:5432/acheimontador`)
+- `DB_USERNAME` (opcional; padrão: `acheimontador`)
+- `DB_PASSWORD` (obrigatória; forneça no ambiente, sem gravar o valor no repositório)
 - `JWT_SECRET` (obrigatória; use uma chave forte com pelo menos 32 caracteres)
 - `JWT_EXPIRATION_MILLIS` (opcional; padrão: `28800000`)
 
-Configure uma chave JWT nova no ambiente antes de iniciar a aplicação; não armazene segredos no repositório.
+O `compose.yaml` inicia PostgreSQL 17, cria o banco `acheimontador` e persiste os dados no volume `postgres_data`. A senha do banco é obrigatória também no Compose e não possui valor padrão.
+
+Exemplo no PowerShell para iniciar o banco e a aplicação localmente:
+
+```powershell
+$env:DB_PASSWORD = "informe-uma-senha-local"
+$env:JWT_SECRET = "informe-uma-chave-forte-com-pelo-menos-32-caracteres"
+docker compose up -d postgres
+.\mvnw spring-boot:run
+```
+
+No Linux/macOS, exporte `DB_PASSWORD` e `JWT_SECRET` antes de executar `docker compose up -d postgres` e `./mvnw spring-boot:run`. Configure uma chave JWT nova no ambiente antes de iniciar a aplicação; não armazene segredos no repositório. Para usar credenciais diferentes do padrão, defina `DB_USERNAME` no ambiente tanto para o Compose quanto para a aplicação.
 
 ## Organização dos pacotes
 

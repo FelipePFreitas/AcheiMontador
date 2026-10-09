@@ -1,13 +1,14 @@
 services:
-  mysql:
-    image: 'mysql:latest'
+  postgres:
+    image: 'postgres:17'
     environment:
-      - 'MYSQL_DATABASE=rhexpress'
-      - 'MYSQL_ROOT_PASSWORD=aluno1234' # Define a senha do usuário root
+      POSTGRES_DB: acheimontador
+      POSTGRES_USER: ${DB_USERNAME:-acheimontador}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-acheimontador}
     ports:
-      - '3307:3306'
+      - '5432:5432'
     volumes:
-      - mysql_data:/var/lib/mysql # Garante que os dados não sumam ao reiniciar
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  mysql_data:
+  postgres_data:
