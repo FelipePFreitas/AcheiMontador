@@ -17,5 +17,8 @@ public class Montador {
     private String senha;
     private String documento;
     private Endereco endereco;
+    private Assinatura assinatura;
+    private String fotoUrl;
+    private int avaliacao;
 
 }

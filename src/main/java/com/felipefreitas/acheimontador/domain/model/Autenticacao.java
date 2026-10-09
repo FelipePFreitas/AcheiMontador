@@ -1,5 +1,6 @@
 package com.felipefreitas.acheimontador.domain.model;
 
+import com.felipefreitas.acheimontador.domain.enums.RoleUsuario;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,5 +14,6 @@ public class Autenticacao {
     private Long id;
     private String email;
     private String senha;
-    private Cliente cliente;
+    private RoleUsuario role;
+    private Long usuarioId;
 }

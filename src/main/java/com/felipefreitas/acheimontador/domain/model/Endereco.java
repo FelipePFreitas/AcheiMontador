@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class Endereco {
 
+    private Long id;
     private String cep;
     private String endereco;
     private String numero;

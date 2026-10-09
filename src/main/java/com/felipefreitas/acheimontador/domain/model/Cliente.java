@@ -17,4 +17,5 @@ public class Cliente {
     private String senha;
     private String documento;
     private Endereco endereco;
+    private int avaliacao;
 }
