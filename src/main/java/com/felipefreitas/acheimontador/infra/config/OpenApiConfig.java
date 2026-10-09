@@ -23,7 +23,7 @@ import org.springframework.context.annotation.Configuration;
                 title = "AcheiMontador API",
                 version = "1.0.0",
                 description = "API para conectar clientes a montadores de móveis próximos.",
-                termsOfService = "https://github.com/FelipePFreitas/RhExpress",
+                termsOfService = "https://github.com/FelipePFreitas/AcheiMontador",
                 contact = @Contact(
                         name = "Felipe Freitas",
                         email = "felipefreitas210891@gmail.com",
