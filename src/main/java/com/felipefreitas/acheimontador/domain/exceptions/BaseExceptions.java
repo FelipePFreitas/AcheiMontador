@@ -1,6 +1,5 @@
-package com.felipefreitas.acheimontador.infra.exceptionhandler;
+package com.felipefreitas.acheimontador.domain.exceptions;
 
-import com.felipefreitas.acheimontador.domain.exceptions.ErrorEnum;
 import lombok.Getter;
 
 @Getter
@@ -9,7 +8,6 @@ public class BaseExceptions extends RuntimeException {
 
     public BaseExceptions(ErrorEnum errorEnum) {
         super(errorEnum.getErrorMessage());
-
         this.errorEnum = errorEnum;
     }
 }

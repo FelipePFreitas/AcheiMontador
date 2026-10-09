@@ -1,9 +1,9 @@
 package com.felipefreitas.acheimontador.app.port.input;
 
-import com.felipefreitas.acheimontador.app.dto.autenticacao.AuthTokenResponseDTO;
-import com.felipefreitas.acheimontador.app.dto.autenticacao.LoginRequestDTO;
+import com.felipefreitas.acheimontador.app.command.autenticacao.AutenticarUsuarioCommand;
+import com.felipefreitas.acheimontador.app.result.autenticacao.AutenticarUsuarioResult;
 
 public interface AutenticarUsuarioInputPort {
 
-    AuthTokenResponseDTO authenticate(LoginRequestDTO request);
+    AutenticarUsuarioResult authenticate(AutenticarUsuarioCommand command);
 }

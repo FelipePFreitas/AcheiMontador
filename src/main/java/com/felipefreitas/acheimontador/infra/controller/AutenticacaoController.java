@@ -1,8 +1,9 @@
 package com.felipefreitas.acheimontador.infra.controller;
 
-import com.felipefreitas.acheimontador.app.dto.autenticacao.AuthTokenResponseDTO;
-import com.felipefreitas.acheimontador.app.dto.autenticacao.LoginRequestDTO;
+import com.felipefreitas.acheimontador.app.command.autenticacao.AutenticarUsuarioCommand;
+import com.felipefreitas.acheimontador.infra.controller.dto.request.LoginRequestDTO;
 import com.felipefreitas.acheimontador.app.port.input.AutenticarUsuarioInputPort;
+import com.felipefreitas.acheimontador.infra.controller.dto.response.AuthTokenResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -35,6 +36,13 @@ public class AutenticacaoController {
             @ApiResponse(responseCode = "401", description = "Credenciais inválidas", content = @Content)
     })
     public ResponseEntity<AuthTokenResponseDTO> login(@RequestBody @Valid LoginRequestDTO request) {
-        return ResponseEntity.ok(autenticacaoUseCase.authenticate(request));
+        var command = new AutenticarUsuarioCommand(request.login(), request.senha());
+        var result = autenticacaoUseCase.authenticate(command);
+        var response = new AuthTokenResponseDTO(
+                result.tokenType(),
+                result.accessToken(),
+                result.expiresInMillis()
+        );
+        return ResponseEntity.ok(response);
     }
 }

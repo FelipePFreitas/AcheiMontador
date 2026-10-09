@@ -1,4 +1,4 @@
-package com.felipefreitas.acheimontador.app.dto.usuario;
+package com.felipefreitas.acheimontador.infra.controller.dto.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

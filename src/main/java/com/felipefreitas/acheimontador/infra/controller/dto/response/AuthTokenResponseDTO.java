@@ -1,4 +1,4 @@
-package com.felipefreitas.acheimontador.app.dto.autenticacao;
+package com.felipefreitas.acheimontador.infra.controller.dto.response;
 
 public record AuthTokenResponseDTO(
         String tokenType,
