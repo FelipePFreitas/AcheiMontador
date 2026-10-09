@@ -1,6 +1,6 @@
 package com.felipefreitas.acheimontador.domain.repository;
 
-import com.felipefreitas.acheimontador.domain.model.Usuario;
+import com.felipefreitas.acheimontador.domain.model.Autenticacao;
 
 import java.util.Optional;
 
@@ -8,8 +8,8 @@ public interface UsuarioRepository {
 
     boolean existsByEmail(String email);
 
-    Usuario save(Usuario usuario);
+    Autenticacao save(Autenticacao autenticacao);
 
-    Optional<Usuario> findByEmail(String email);
+    Optional<Autenticacao> findByEmail(String email);
 
 }

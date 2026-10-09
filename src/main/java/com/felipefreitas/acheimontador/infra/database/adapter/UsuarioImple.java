@@ -1,6 +1,6 @@
 package com.felipefreitas.acheimontador.infra.database.adapter;
 
-import com.felipefreitas.acheimontador.domain.model.Usuario;
+import com.felipefreitas.acheimontador.domain.model.Autenticacao;
 import com.felipefreitas.acheimontador.domain.repository.UsuarioRepository;
 import com.felipefreitas.acheimontador.infra.database.entity.UsuarioEntity;
 import com.felipefreitas.acheimontador.infra.mapper.UsuarioMapper;
@@ -26,14 +26,14 @@ public class UsuarioImple implements UsuarioRepository {
     }
 
     @Override
-    public Usuario save(Usuario usuario) {
-        UsuarioEntity usuarioEntity = usuarioMapper.toModel(usuario);
+    public Autenticacao save(Autenticacao autenticacao) {
+        UsuarioEntity usuarioEntity = usuarioMapper.toModel(autenticacao);
         UsuarioEntity usuarioSalvo = usuarioPersistence.save(usuarioEntity);
         return usuarioMapper.toEntity(usuarioSalvo);
     }
 
     @Override
-    public Optional<Usuario> findByEmail(String email) {
+    public Optional<Autenticacao> findByEmail(String email) {
         return usuarioPersistence.findByEmail(email).stream().map(usuarioMapper::toEntity).findFirst();
     }
 }
